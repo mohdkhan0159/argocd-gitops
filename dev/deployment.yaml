@@ -1,1 +1,23 @@
-
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-argocd-app
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python-argocd-app
+  template:
+    metadata:
+      labels:
+        app: python-argocd-app
+    spec:
+      containers:
+        - name: python-argocd-app
+          image: argocddemoacr123.azurecr.io/python-argocd-app:initial
+          ports:
+            - containerPort: 5000
+          env:
+            - name: ENVIRONMENT
+              value: "dev"
