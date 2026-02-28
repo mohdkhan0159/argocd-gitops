@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: python-argocd-app
-          image: argocddemoacr123.azurecr.io/python-argocd-app:116
+          image: argocddemoacr123.azurecr.io/python-argocd-app:117
           ports:
             - containerPort: 5000
           env:
